@@ -5,7 +5,7 @@ I am learning Python automation to improve efficiency and simplify repetitive ta
 
 ## Goals  
 - Automate daily tasks
-- Learn data analysis and computation with `Pandas`, `Numpy`
+- Learn data analysis and computation with `Pandas`, `NumPy`
 - Learn web scraping with `BeautifulSoup` and `Selenium`  
 - Work with files and system operations using `os` and `shutil`  
 - Write automation scripts for productivity  
