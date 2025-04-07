@@ -47,10 +47,10 @@ dp = df.loc[0, "Name"]
 dp = df.loc[df["Age"] > 30, "Name"]
 pp = df.loc[df["City"] == "Vilnius", "City"] = "Sositne"
 cc = df.loc[df["Name"] == "Tomas", "Age"] = 25
+
 #  Atspausdink pirmas 2 eilutes ir tik stulpelius „Name“ ir „Age“. 8. Atspausdink paskutinio žmogaus duomenis naudodamas iloc.
 ka = df.loc[0:1, ["Name", "Age"]]
 s = df.iloc[-1]
-
 
 # Atrink žmones, kurių vardas yra Jonas, Inga arba Eglė
 names = df[df["Vardas"].isin(["Jonas", "Inga", "Eglė"])]
@@ -66,7 +66,6 @@ df.sort_values(by=['Miestas', 'Amžius'], ascending=[True, False])
 df.groupby('Miestas')['Amžius'].mean()
 
 import pandas as pd
-
 data = {
     'Vardas': ['Jonas', 'Asta', 'Mantas', 'Rūta', 'Tomas'],
     'Miestas': ['Vilnius', 'Kaunas', 'Vilnius', 'Kaunas', 'Klaipėda'],
@@ -75,11 +74,10 @@ data = {
 }
 
 df = pd.DataFrame(data)
-#print(df.groupby('Miestas')['Amžius'].mean())
+print(df.groupby('Miestas')['Amžius'].mean())
 
 # Uzduotis su groupby()
 import pandas as pd
-
 data = {
     'Vardas': ['Jonas', 'Asta', 'Mantas', 'Rūta', 'Tomas', 'Laura', 'Jurgis'],
     'Skyrius': ['IT', 'Personalas', 'IT', 'Marketingas', 'IT', 'Marketingas', 'Personalas'],
@@ -88,13 +86,15 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
 # Grupuok darbuotojus pagal skyrių ir suskaičiuok:
 # kiek žmonių dirba kiekviename skyriuje (count)
 print(df.groupby("Skyrius")["Vardas"].count())
+
 # kiek vidutiniškai moka kiekvienam skyriui (mean atlyginimas)
 print(df.groupby("Skyrius")["Atlyginimas"].mean())
 
 # Grupuok pagal skyrių ir lytį, parodyk:
 # vidutinį atlyginimą kiekviename skyriuje vyrams ir moterims
-#rint(df.groupby(["Skyrius", "Lytis"])["Atlyginimas"].mean().unstack())
+print(df.groupby(["Skyrius", "Lytis"])["Atlyginimas"].mean().unstack())
 
