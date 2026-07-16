@@ -1,0 +1,63 @@
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+driver.get("https://example.com")
+print(driver.title)
+
+driver.quit()
+
+# Atidarytų https://www.python.org
+# Išspausdintų puslapio pavadinimą
+# Išspausdintų dabartinį puslapio adresą
+# Uždarytų naršyklę
+
+driver = webdriver.Chrome()
+driver.get("https://www.python.org")
+print(driver.title)
+print(driver.current_url)
+driver.quit()
+
+###########################
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome()
+driver.get("https://www.python.org")
+
+heading = driver.find_element(By.CLASS_NAME, "introduction")
+
+print(heading.text)
+driver.quit()
+
+################################
+# Atidaryk https://www.python.org ir surask pirmą h1 elementą:
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://www.python.org")
+
+heading = driver.find_element(By.TAG_NAME, "h1")
+print(heading.text)
+
+driver.quit()
+
+#################################
+# teksto įvedimas ir mygtuko paspaudimas
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+driver = webdriver.Chrome()
+driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+
+text_box = driver.find_element(By.NAME, "my-text")
+submit_button = driver.find_element(By.CSS_SELECTOR, "button")
+
+text_box.send_keys("Andriud mokosi Selenium")
+submit_button.click()
+
+message = driver.find_element(By.ID, "message")
+print(message.text)
+
+driver.quit()
